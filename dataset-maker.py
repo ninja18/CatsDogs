@@ -14,7 +14,7 @@ for folder in folders:
         if file.startswith('cat'):
             output = 1.0
         # load image
-        photo = load_img(folder + '/' + file, target_size=(200, 200))
+        photo = load_img(folder + '/' + file, target_size=(224,224))
         # convert to numpy array
         photo = img_to_array(photo)
         # store
@@ -25,5 +25,5 @@ for folder in folders:
     labels = asarray(labels)
     print(photos.shape, labels.shape)
     # save the reshaped photos
-    save(folder+'-dogs_vs_cats_photos.npy', photos)
-    save(folder+'-dogs_vs_cats_labels.npy', labels)
+    save(folder+'_photos.npy', photos)
+    save(folder+'_labels.npy', labels)
